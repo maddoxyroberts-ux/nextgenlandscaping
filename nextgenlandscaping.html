@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-season="fall"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Next Gen Landscaping</title>
+<style>
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/bricolage-grotesque-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Bricolage Grotesque';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/bricolage-grotesque-latin-800-normal.woff2') format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/figtree-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Figtree';font-style:normal;font-weight:600;font-display:swap;src:url('fonts/figtree-latin-600-normal.woff2') format('woff2')}
+:root{--bg:#F3F6F4;--card:#FFFFFF;--ink:#14231A;--mute:#4D5F54;--line:#CFDAD3;--spruce:#1F4D36;--accent:#7BB661;--on:#14231A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A14;--card:#17271E;--ink:#E9F1EC;--mute:#A3B5AA;--line:#2C4335;--spruce:#8FD0A8}}
+:root[data-theme="dark"]{--bg:#0F1A14;--card:#17271E;--ink:#E9F1EC;--mute:#A3B5AA;--line:#2C4335;--spruce:#8FD0A8}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+[data-season=spring]{--accent:#7BB661}[data-season=summer]{--accent:#E9B824}
+[data-season=fall]{--accent:#D9692B}[data-season=winter]{--accent:#5B9BC4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.logo{font:800 20px 'Bricolage Grotesque',serif}
+.hero{padding:32px 20px 0}
+.hero>.wrap{max-width:1040px;background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:16px;padding:8px 28px 44px}
+@media(max-width:760px){.hero{padding:20px 20px 0}.hero>.wrap{padding:4px 16px 32px}}
+.hero h1{font-size:clamp(40px,8vw,88px);font-weight:800;max-width:14ch;margin:36px 0 18px;letter-spacing:-.02em}
+.hero p{max-width:52ch;font-size:19px;color:var(--ink)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tabs button{font:600 16px Figtree,sans-serif;padding:11px 20px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;min-height:44px}
+.tabs button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.cta:disabled{opacity:.6;cursor:wait}
+.cta{display:inline-block;margin-top:28px;background:var(--spruce);color:var(--bg);padding:14px 26px;border-radius:8px;font-weight:600;text-decoration:none;border:0;font-size:17px;cursor:pointer;font-family:inherit}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]) .cta{color:#0F1A14}}
+:root[data-theme=dark] .cta{color:#0F1A14}
+section{padding:56px 0}
+h2{font-size:clamp(28px,4.5vw,44px);margin-bottom:8px}
+.sub{color:var(--mute);max-width:60ch;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.svc{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:18px;text-align:left;font:inherit;color:inherit;cursor:pointer;display:flex;flex-direction:column;gap:8px;transition:opacity .3s,border-color .2s}
+.svc.off{opacity:.45}
+.svc[aria-pressed=true]{border-color:var(--spruce);box-shadow:inset 0 0 0 1px var(--spruce)}
+.svc h3{font-size:22px}
+.svc small{color:var(--mute);font-size:14px}
+.mo{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-top:auto;padding-top:6px}
+.mo i{font-style:normal;font-size:13px;line-height:1;text-align:center;padding:5px 0;border-radius:6px;color:var(--mute)}
+.mo i.on{background:var(--accent);color:#14231A;font-weight:600}
+.mo i.cur{outline:2px solid var(--ink);outline-offset:1px}
+.legend{font-size:14px;color:var(--mute);margin-top:12px}
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.quote{grid-template-columns:1fr}}
+.panel{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:22px}
+label{display:block;font-weight:600;margin:14px 0 6px}
+.chk{display:flex;align-items:center;gap:10px;cursor:pointer}
+.chk input{width:22px;height:22px;min-width:22px;margin:0;accent-color:var(--spruce);cursor:pointer}
+input[type=text],input[type=tel],input[type=number],textarea{width:100%;font:inherit;padding:11px;border-radius:8px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--spruce)}
+.price{font:800 44px 'Bricolage Grotesque',serif}
+.note{margin-top:16px;padding:14px 16px;border-left:4px solid var(--accent);background:var(--bg);border-radius:0 8px 8px 0;font-size:16px;line-height:1.5}
+.note strong{color:var(--spruce)}
+.pair{display:flex;align-items:center;gap:10px}
+.pair input[type=range]{flex:1;min-width:0}
+.pair input[type=number]{width:100px;flex:none;padding:8px 10px}
+.unit{color:var(--mute);font-size:15px;min-width:36px}
+.cash{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:8px 14px;border-radius:999px;border:2px solid var(--spruce);color:var(--spruce);font-weight:600;font-size:15px}
+.list{margin:8px 0 0;padding-left:20px;color:var(--mute)}
+.ok{background:color-mix(in srgb,var(--accent) 30%,var(--card));padding:14px;border-radius:8px;margin-top:14px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:15px}
+.yardbg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.yardbg i{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .6s}
+.yardbg .y-spring{background-image:url('https://images.pexels.com/photos/6179052/pexels-photo-6179052.jpeg?auto=compress&cs=tinysrgb&w=1920')}.yardbg .y-summer{background-image:url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1920')}.yardbg .y-fall{background-image:url('https://images.pexels.com/photos/10258631/pexels-photo-10258631.jpeg?auto=compress&cs=tinysrgb&w=1920')}.yardbg .y-winter{background-image:url('https://images.pexels.com/photos/16655113/pexels-photo-16655113.jpeg?auto=compress&cs=tinysrgb&w=1920')}
+[data-season=spring] .y-spring,[data-season=summer] .y-summer,[data-season=fall] .y-fall,[data-season=winter] .y-winter{opacity:1}
+main section{background:color-mix(in srgb,var(--bg) 90%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);border-radius:16px;padding:40px 28px;margin:32px 0}
+@media(max-width:760px){main section{padding:32px 16px;margin:20px 0}}
+footer{background:var(--bg)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="yardbg" aria-hidden="true"><i class="y-spring"></i><i class="y-summer"></i><i class="y-fall"></i><i class="y-winter"></i></div>
+<div class="hero" id="hero">
+ <div class="wrap">
+  <header><span class="logo">Next Gen Landscaping</span><a href="#quote" style="font-weight:600">Get a quote</a></header>
+  <h1 id="h1">Every leaf, gone.</h1>
+  <p id="lede">Raking and leaf blowing, last mows, and beds put to sleep the right way.</p>
+  <div class="tabs" role="group" aria-label="Pick a season">
+   <button data-s="spring" aria-pressed="false">Spring</button><button data-s="summer" aria-pressed="false">Summer</button><button data-s="fall" aria-pressed="true">Fall</button><button data-s="winter" aria-pressed="false">Winter</button>
+  </div>
+  <a class="cta" href="#quote">Get a free estimate</a>
+ </div>
+</div>
+
+<main class="wrap">
+ <section id="services">
+  <h2>One crew, every month</h2>
+  <p class="sub">Pick a season to see what we're doing right now. Tap any service to add it to your estimate. Services that don't run this month can't be booked yet.</p>
+  <div class="grid" id="grid"><button class="svc " data-i="0" aria-pressed="false"><h3>Lawn mowing</h3><small>Weekly or biweekly cuts</small><div class="mo" aria-hidden="true"><i class=" ">Jan</i><i class=" ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class="on ">Jun</i><i class="on ">Jul</i><i class="on ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class=" ">Dec</i></div></button><button class="svc " data-i="1" aria-pressed="false"><h3>Raking &amp; leaf blowing</h3><small>Leaves raked, blown, and bagged</small><div class="mo" aria-hidden="true"><i class=" ">Jan</i><i class=" ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class=" ">Jun</i><i class=" ">Jul</i><i class=" ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class=" ">Dec</i></div></button><button class="svc off" data-i="2" aria-pressed="false"><h3>Snow shoveling</h3><small>Driveways, walks, and steps</small><div class="mo" aria-hidden="true"><i class="on ">Jan</i><i class="on ">Feb</i><i class=" ">Mar</i><i class=" ">Apr</i><i class=" ">May</i><i class=" ">Jun</i><i class=" ">Jul</i><i class=" ">Aug</i><i class=" cur">Sep</i><i class=" ">Oct</i><i class=" ">Nov</i><i class="on ">Dec</i></div></button><button class="svc " data-i="3" aria-pressed="false"><h3>Lawn and sidewalk trimming</h3><small>Trim the lawn and clean lines along sidewalks and beds</small><div class="mo" aria-hidden="true"><i class=" ">Jan</i><i class=" ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class="on ">Jun</i><i class="on ">Jul</i><i class="on ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class=" ">Dec</i></div></button><button class="svc " data-i="4" aria-pressed="false"><h3>Bush hedging</h3><small>Shaping hedges and shrubs</small><div class="mo" aria-hidden="true"><i class=" ">Jan</i><i class=" ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class="on ">Jun</i><i class="on ">Jul</i><i class="on ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class=" ">Dec</i></div></button><button class="svc " data-i="5" aria-pressed="false"><h3>Planting</h3><small>Flowers, veggies, shrubs</small><div class="mo" aria-hidden="true"><i class=" ">Jan</i><i class=" ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class="on ">Jun</i><i class="on ">Jul</i><i class="on ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class=" ">Dec</i></div></button><button class="svc " data-i="6" aria-pressed="false"><h3>Weed &amp; bush removal</h3><small>Pulled by hand or dug out</small><div class="mo" aria-hidden="true"><i class=" ">Jan</i><i class=" ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class="on ">Jun</i><i class="on ">Jul</i><i class="on ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class=" ">Dec</i></div></button><button class="svc " data-i="7" aria-pressed="false"><h3>Other</h3><small>Tell us what you need</small><div class="mo" aria-hidden="true"><i class="on ">Jan</i><i class="on ">Feb</i><i class="on ">Mar</i><i class="on ">Apr</i><i class="on ">May</i><i class="on ">Jun</i><i class="on ">Jul</i><i class="on ">Aug</i><i class="on cur">Sep</i><i class="on ">Oct</i><i class="on ">Nov</i><i class="on ">Dec</i></div></button></div>
+  <p class="legend">Highlighted months show when each service runs. The outlined month is this month.</p>
+ </section>
+
+ <section id="quote">
+  <h2>Build your estimate</h2>
+  <p class="sub">Slide to your yard size. Lawn mowing is $0.45 per 100 square feet for the first 10,000 square feet and $0.10 per 100 square feet after that. Raking and leaf blowing is $1.90 per 100 square feet for the first 10,000 square feet and $1.20 per 100 square feet after that. Lawn and sidewalk trimming is $0.25 per 100 square feet for the first 10,000 square feet and $0.10 per 100 square feet after that, and sidewalk edging adds $10. Bush hedging is $15 per small bush, $25 per medium bush, and $45 per large bush (0–10 of each). Planting is $3.50 per square foot of garden, and weed &amp; bush removal is $1.45 per square foot of garden. Snow shoveling is $20 per sidewalk plus $2.75 per 50 sq ft of driveway. Other services are quoted in person. All prices are per visit. We confirm after a quick look at your property.</p>
+  <div class="quote">
+   <div class="panel">
+    <div id="sizeRow"><label for="sizeN">Yard size</label><div class="pair"><input type="range" id="size" min="0" max="20000" step="50" value="0" aria-label="Yard size"><input type="number" id="sizeN" min="0" max="20000" step="1" inputmode="numeric" value="0"><span class="unit">sq ft</span></div></div>
+    <div id="sel" style="margin-top:18px"><span style="color:var(--mute)">No services chosen yet. Tap cards above to add them.</span></div>
+    <div style="margin-top:14px;color:var(--mute)">Estimated per visit</div>
+    <div class="price" id="price">$0</div>
+    <div class="cash">💵 Cash only</div>
+    <div class="note"><strong>Prices are negotiable.</strong> Not sure how many square feet your yard or garden is? No problem. We can come out, measure, and give you a quote in person. Just mention it in your request.</div>
+   </div>
+   <form class="panel" id="form">
+    <h3 style="font-size:24px">Request your visit</h3>
+    <label for="nm">Name</label><input type="text" id="nm" required="" autocomplete="name">
+    <label for="ph">Phone</label><input type="tel" id="ph" required="" autocomplete="tel">
+    <label for="nt">Anything we should know?</label><textarea id="nt" rows="3"></textarea>
+    <input type="text" id="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
+    <button class="cta" type="submit">Send request</button>
+    <div id="done" role="status"></div>
+   </form>
+  </div>
+ </section>
+</main>
+<footer><div class="wrap">Next Gen Landscaping. Mowing, planting, raking, snow shoveling, and everything between. Cash only.</div></footer>
+
+<script>
+const S={
+ spring:['Wake the yard up.','Spring cleanup, first cuts, new plantings, and weeds pulled before they take over.'],
+ summer:['Trimmed, edged, and green.','Weekly mowing, hedge shaping, and weeding while you spend weekends outside.'],
+ fall:['Every leaf, gone.','Raking and leaf blowing, last mows, and beds put to sleep the right way.'],
+ winter:['Cleared before you wake.','Snow shoveling for driveways, walks, and steps so you can get out the door.']};
+const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MS=['winter','winter','spring','spring','spring','summer','summer','summer','fall','fall','fall','winter'];
+const V=[
+ ['Lawn mowing','Weekly or biweekly cuts',['spring','summer','fall'],35,9],
+ ['Raking & leaf blowing','Leaves raked, blown, and bagged',['spring','fall'],45,11],
+ ['Snow shoveling','Driveways, walks, and steps',['winter'],25,4],
+ ['Lawn and sidewalk trimming','Trim the lawn and clean lines along sidewalks and beds',['spring','summer','fall'],25,5],
+ ['Bush hedging','Shaping hedges and shrubs',['spring','summer','fall'],40,8],
+ ['Planting','Flowers, veggies, shrubs',['spring','summer','fall'],45,10],
+ ['Weed & bush removal','Pulled by hand or dug out',['spring','summer','fall'],30,7],
+ ['Other','Tell us what you need',['spring','summer','fall','winter'],0,0,1]];
+const tier=(z,a,b)=>(a*Math.min(z,10000)+b*Math.max(0,z-10000))/100;
+const RATE={'Lawn mowing':[0.45,0.1],'Raking & leaf blowing':[1.9,1.2]},rate=(v,z)=>{const r=RATE[v[0]];return r?tier(z,r[0],r[1]):0};
+const sel=new Set(),now=new Date().getMonth();
+let season=MS[now],other='';
+const $=id=>document.getElementById(id);
+function paint(){
+ document.documentElement.dataset.season=season;
+ $('h1').textContent=S[season][0];$('lede').textContent=S[season][1];
+ document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s===season));
+ $('grid').innerHTML=V.map((v,i)=>`<button class="svc ${v[2].includes(season)?'':'off'}" data-i="${i}" aria-pressed="${sel.has(i)}"><h3>${v[0]}</h3><small>${v[1]}</small><div class="mo" aria-hidden="true">${MS.map((m,k)=>`<i class="${v[2].includes(m)?'on':''} ${k===now?'cur':''}">${MN[k]}</i>`).join('')}</div></button>`).join('');
+ est();
+}
+const snow={w:0,d:0},edge={w:0},bush={s:0,m:0,l:0},BUSH_RATE={s:15,m:25,l:45},garden={z:0};
+const GARDEN=['Planting','Weed & bush removal'];
+const cost=(v,z)=>v[0]==='Snow shoveling'?20*snow.w+2.75*snow.d/50:v[0]==='Lawn and sidewalk trimming'?10*edge.w+tier(z,0.25,0.1):v[0]==='Bush hedging'?BUSH_RATE.s*bush.s+BUSH_RATE.m*bush.m+BUSH_RATE.l*bush.l:GARDEN.includes(v[0])?garden.z*(v[0]==='Weed & bush removal'?1.45:3.50):rate(v,z);
+function tot(){
+ const z=yard,items=[...sel].map(i=>V[i]),oth=items.some(v=>v[5]),priced=items.filter(v=>!v[5]);
+ const t=priced.reduce((a,v)=>a+cost(v,z),0);
+ $('price').textContent=priced.length?`$${t.toFixed(2)}`:(oth?"We'll quote it":'$0');
+ priced.forEach(v=>{const e=$('a'+V.indexOf(v));if(e)e.textContent=cost(v,z).toFixed(2)});
+}
+let yard=0;
+const pair=(k,label,val,max,step,unit)=>`<label for="${k}N">${label}</label><div class="pair"><input type="range" id="${k}" min="0" max="${max}" step="${step}" value="${val}" aria-label="${label}"><input type="number" id="${k}N" min="0" max="${max}" step="1" inputmode="numeric" value="${val}"><span class="unit">${unit}</span></div>`;
+const LIM={size:20000,bs:10,bm:10,bl:10,gs:5000};
+const getV=k=>k==='size'?yard:k==='gs'?garden.z:bush[k[1]];
+const setV=(k,v)=>{v=Math.min(LIM[k],Math.max(0,Math.round(+v||0)));if(k==='size')yard=v;else if(k==='gs')garden.z=v;else bush[k[1]]=v};
+function pairInput(e){
+ const id=e.target.id,k=id.replace(/N$/,'');if(!(k in LIM))return false;
+ setV(k,e.target.value);
+ if(id===k){const n=$(k+'N');if(n)n.value=getV(k)}else{const r=$(k);if(r)r.value=getV(k)}
+ k==='size'?est():tot();return true;
+}
+function pairChange(e){const id=e.target.id;if(/N$/.test(id)&&id.slice(0,-1) in LIM)e.target.value=getV(id.slice(0,-1))}
+function est(){
+ const z=yard;
+ const items=[...sel].map(i=>V[i]);
+ const oth=items.some(v=>v[5]),sn=items.some(v=>v[0]==='Snow shoveling'),ed=items.some(v=>v[0]==='Lawn and sidewalk trimming'),bh=items.some(v=>v[0]==='Bush hedging'),gd=items.some(v=>GARDEN.includes(v[0]));
+ const needz=!items.length||items.some(v=>!v[5]&&v[0]!=='Snow shoveling'&&v[0]!=='Bush hedging'&&!GARDEN.includes(v[0]));
+ $('sizeRow').style.display=needz?'':'none';
+ $('sel').innerHTML=items.length?`<ul class="list">${items.map(v=>`<li>${v[0]}${v[5]?'':' &ndash; $<span id="a'+V.indexOf(v)+'"></span>'}</li>`).join('')}</ul>${ed?'<label for="ew" class="chk"><input type="checkbox" id="ew" '+(edge.w>0?'checked':'')+'> Include sidewalk edging (+$10)</label>':''}${bh?pair('bs','Small bushes ($15 each)',bush.s,10,1,'')+pair('bm','Medium bushes ($25 each)',bush.m,10,1,'')+pair('bl','Large bushes ($45 each)',bush.l,10,1,''):''}${gd?pair('gs','Garden size',garden.z,5000,10,'sq ft'):''}${sn?'<label for="sw">Sidewalks to shovel ($20 each)</label><input type="number" id="sw" min="0" value="'+snow.w+'"><label for="sd">Driveway size in sq ft ($2.75 per 50 sq ft)</label><input type="number" id="sd" min="0" step="50" value="'+snow.d+'">':''}${oth?'<label for="ot">What else do you need?</label><input type="text" id="ot" value="'+other.replace(/"/g,'&quot;')+'">':''}`:'<span style="color:var(--mute)">No services chosen yet. Tap cards above to add them.</span>';
+ tot();
+}
+document.querySelector('.tabs').onclick=e=>{const s=e.target.dataset.s;if(s){season=s;paint()}};
+$('grid').onclick=e=>{const b=e.target.closest('.svc');if(!b)return;const i=+b.dataset.i;sel.has(i)?sel.delete(i):sel.add(i);paint()};
+$('sizeRow').oninput=pairInput;$('sizeRow').onchange=pairChange;
+$('sel').onchange=pairChange;
+$('sel').oninput=e=>{const i=e.target.id;if(i==='ot')other=e.target.value;if(i==='ew'){edge.w=e.target.checked?1:0;tot()}if(pairInput(e))return;if(i==='sw'){snow.w=Math.max(0,+e.target.value||0);tot()}if(i==='sd'){snow.d=Math.max(0,+e.target.value||0);tot()}};
+const MAIL='https://formsubmit.co/ajax/maddoxyroberts@gmail.com';
+const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function summary(){
+ const z=yard,items=[...sel].map(i=>V[i]),lines=[];
+ items.forEach(v=>{
+  if(v[5]){lines.push('Other: '+(other||'(not described)'));return}
+  let d=v[0]+' - $'+cost(v,z).toFixed(2);
+  if(v[0]==='Snow shoveling')d+=` (${snow.w} sidewalk(s), ${snow.d} sq ft driveway)`;
+  else if(v[0]==='Bush hedging')d+=` (${bush.s} small, ${bush.m} medium, ${bush.l} large)`;
+  else if(GARDEN.includes(v[0]))d+=` (${garden.z} sq ft garden)`;
+  else if(v[0]==='Lawn and sidewalk trimming')d+=edge.w?' (with sidewalk trimming)':' (no sidewalk trimming)';
+  lines.push(d)});
+ return{services:lines.join('\n')||'General property visit',yard:$('sizeRow').style.display==='none'?'Not needed':z.toLocaleString()+' sq ft',estimate:$('price').textContent};
+}
+const TO='maddoxyroberts@gmail.com';
+function mailApp(subj,d){
+ const body=Object.entries(d).map(([k,v])=>k+': '+v).join('\n');
+ location.href='mailto:'+TO+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+}
+$('form').onsubmit=async e=>{e.preventDefault();
+ const f=e.target,btn=f.querySelector('button[type=submit]');
+ if($('hp').value)return;
+ const sm=summary(),nm=$('nm').value.trim(),ph=$('ph').value.trim();
+ const subj='New Next Gen Landscaping request from '+nm;
+ const d={Name:nm,Phone:ph,Services:sm.services,'Yard size':sm.yard,'Estimate per visit':sm.estimate,Notes:$('nt').value.trim()||'None'};
+ const viaEmail=()=>{mailApp(subj,d);$('done').innerHTML=`<div class="ok">Your email app should open with your request to ${TO} filled in. Just press Send. If nothing opened, email us at <a href="mailto:${TO}">${TO}</a>.</div>`};
+ $('done').innerHTML='';
+ if(location.protocol==='file:'){viaEmail();return}
+ btn.disabled=true;btn.textContent='Sending…';
+ try{
+  const r=await fetch(MAIL,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+   body:JSON.stringify(Object.assign({_subject:subj,_template:'table',_captcha:'false'},d))});
+  const j=await r.json().catch(()=>({}));
+  if(!r.ok||j.success===false||j.success==='false')throw new Error(j.message||'Send failed');
+  $('done').innerHTML=`<div class="ok">Thanks, ${esc(nm)}. Your request was sent. We'll call ${esc(ph)} soon.</div>`;
+  f.reset();
+ }catch(err){viaEmail()}
+ finally{btn.disabled=false;btn.textContent='Send request'}
+};
+paint();
+</script>
+
+
+</body></html>
